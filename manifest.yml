@@ -1,0 +1,12 @@
+modules:
+  'jira:issuePanel':
+    - key: jira-bug-search
+      function: main
+      title: jira-bug-search
+      description: Search for JIRA bug
+  function:
+    - key: main
+      handler: index.run
+app:
+  id: 'ari:cloud:ecosystem::app/f6fe86d7-1b7c-4337-b239-32bc15145861'
+  name: jira-bug-search
