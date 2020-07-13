@@ -16,10 +16,14 @@ const Panel = () => {
     await checkResponse('Jira API', issueResponse);
     const { summary, description } = (await issueResponse.json()).fields;
     const response = await api.fetch(`http://api.serpstack.com/search?access_key=7817e810f3b9ed1efa8cbf2255ab34e4&page=1&num=2&query=${summary}%20%2B%20stackoverflow`);
-    const json = (await response.json()).organic_results[0].url;
+    const firstjson = (await response.json()).organic_results[0].url;
+    const secondjson = (await response.json()).organic_results[1].url;
+    const thirdjson = (await response.json()).organic_results[2].url;
     getBug({
       summary: summary,
-      description: json
+      firstlink: firstjson,
+      secondlink: secondjson,
+      thirdlink: thirdjson
     });
   }
   
@@ -36,8 +40,9 @@ const Panel = () => {
       </ButtonSet>
       {bug && (
         <Fragment>
-          <Text content={`**SUMMARY**`} />
-          <Text content={bug.description} />
+          <Text content={bug.firstlink} />
+          <Text content={bug.secondlink} />
+          <Text content={bug.thirdlink} />
         </Fragment>
       )}
     </Fragment>
