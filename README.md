@@ -1,9 +1,5 @@
 # JIRA Bug Search
 
-Test it here: https://bugsearch.atlassian.net/projects/JOK/issues/JOK-1
-
-(Access given to testing@devpost.com - Email me at mashrins@gmail.com for any access related issues. Will quickly resolve.)
-
 This project contains a Forge app written in Javascript that shows the top 3 stackoverflow link for a given issue. This allows to get links to top results directly from JIRA.
 
 ## Requirements
